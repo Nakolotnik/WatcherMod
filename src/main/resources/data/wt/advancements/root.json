@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:clock"
+    },
+    "title": {
+      "translate": "advancement.wt.root.title"
+    },
+    "description": {
+      "translate": "advancement.wt.root.desc"
+    },
+    "background": "minecraft:textures/block/deepslate.png",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "new_tab": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}
