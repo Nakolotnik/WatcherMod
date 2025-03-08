@@ -8,11 +8,14 @@ message.watcher.6=[Ледяной взгляд Смотрящего отража
 message.watcher.7=[Ледяной взгляд Смотрящего словно выжигает глаза]
 message.watcher.8=[Ледяной взгляд Смотрящего словно прожигает дыру]
 
+
 message.watcher.not_your_time=Твое время ещё не пришло.
+
 
 advancement.wt.root.title=Начало начал
 advancement.wt.root.desc=Только время покажет что будет дальше.
 advancement.wt.timeless_wasteland.title=Libera Me From Hell
 advancement.wt.timeless_wasteland.desc=Попасть во вневременную пустошь(как?)
+
 
 message.watcher.update_available=§c[WatcherMod] Доступна новая версия! Обновитесь на Modrinth.

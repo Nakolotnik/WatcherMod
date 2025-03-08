@@ -13,6 +13,7 @@ public class WatcherMessageRegistry {
     private static final long COOLDOWN_MILLIS = 10 * 60 * 1000;
 
     static {
+
         registerMessage("message.watcher.1", 1);
         registerMessage("message.watcher.2", 2);
         registerMessage("message.watcher.3", 3);
@@ -21,6 +22,7 @@ public class WatcherMessageRegistry {
         registerMessage("message.watcher.6", 8);
         registerMessage("message.watcher.7", 10);
         registerMessage("message.watcher.8", 10);
+
     }
 
     public static void registerMessage(String key, int rarityIndex) {

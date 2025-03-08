@@ -29,12 +29,12 @@ public class Watcher {
 
 		LanguageAdapter.registerMod(MOD_ID);
 		ModSounds.SOUND_EVENTS.register(bus);
-		UpdatorChecker.init();
 		bus.addListener(WathcerMob::entityAttributes);
 		bus.addListener(this::clientSetup);
 		bus.addListener(this::commonSetup);
 
 		ModPackets.register();
+		UpdatorChecker.init();
 
 		Mixins.addConfiguration("mixins.wt.json");
 	}

@@ -11,7 +11,6 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import org.nakolotnik.wt.Watcher;
-
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
