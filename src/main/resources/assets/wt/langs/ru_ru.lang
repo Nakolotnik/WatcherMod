@@ -1,0 +1,18 @@
+entity.wt.watcher=Смотрящий
+message.watcher.1=[Ледяной взгляд Смотрящего ничего не выражает]
+message.watcher.2=[Ледяной взгляд Смотрящего выражает интерес]
+message.watcher.3=[Ледяной взгляд Смотрящего полон загадки]
+message.watcher.4=[Ледяной взгляд Смотрящего кажется проницательным]
+message.watcher.5=[Ледяной взгляд Смотрящего словно пронзает тебя насквозь]
+message.watcher.6=[Ледяной взгляд Смотрящего отражает что-то недоступное пониманию]
+message.watcher.7=[Ледяной взгляд Смотрящего словно выжигает глаза]
+message.watcher.8=[Ледяной взгляд Смотрящего словно прожигает дыру]
+
+message.watcher.not_your_time=Твое время ещё не пришло.
+
+advancement.wt.root.title=Начало начал
+advancement.wt.root.desc=Только время покажет что будет дальше.
+advancement.wt.timeless_wasteland.title=Libera Me From Hell
+advancement.wt.timeless_wasteland.desc=Попасть во вневременную пустошь(как?)
+
+message.watcher.update_available=§c[WatcherMod] Доступна новая версия! Обновитесь на Modrinth.

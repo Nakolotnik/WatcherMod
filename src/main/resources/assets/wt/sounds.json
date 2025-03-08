@@ -1,0 +1,20 @@
+{
+  "four_whispering": {
+    "sounds": [
+      {
+        "name": "wt:four_whispering",
+        "stream": true,
+        "volume": 0.3
+      }
+    ]
+  },
+  "whispering": {
+    "sounds": [
+      {
+        "name": "wt:whispering",
+        "stream": true,
+        "volume": 0.3
+      }
+    ]
+  }
+}

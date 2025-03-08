@@ -1,0 +1,11 @@
+{
+  "dimensions": {
+    "minecraft:overworld": {
+      "type": "minecraft:overworld",
+      "generator": {
+        "type": "wt:timeless_wasteland",
+        "settings": {}
+      }
+    }
+  }
+}
