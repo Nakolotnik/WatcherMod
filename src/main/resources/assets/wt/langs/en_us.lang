@@ -5,6 +5,10 @@ message.watcher.3=[The Watcher's icy gaze is full of mystery]
 message.watcher.4=[The Watcher's icy gaze seems insightful]
 message.watcher.5=[The Watcher's icy gaze pierces through you]
 message.watcher.6=[The Watcher's icy gaze reflects something beyond comprehension]
+message.watcher.7=[Watcher's icy gaze burns a hole in your eyes]
+message.watcher.8=[Watcher's icy gaze burns a hole]
+
+
 message.watcher.not_your_time=Your time has not yet come.
 
 
@@ -12,3 +16,7 @@ advancement.wt.root.title=The Beginning of Beginnings
 advancement.wt.root.desc=Only time will show what happens next.
 advancement.wt.timeless_wasteland.title=Libera Me From Hell
 advancement.wt.timeless_wasteland.desc=Step into the timeless wasteland.(how?)
+
+
+message.watcher.update_available=§c[WatcherMod] A new version is available! Update on Modrinth.
+

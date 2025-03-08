@@ -14,6 +14,7 @@ import org.nakolotnik.wt.client.entity.ModEntityRenderers;
 import org.nakolotnik.wt.entity.WathcerMob;
 import org.nakolotnik.wt.init.ModPackets;
 import org.nakolotnik.wt.init.ModSounds;
+import org.nakolotnik.wt.utils.UpdatorChecker;
 import org.spongepowered.asm.mixin.Mixins;
 import org.zeith.hammerlib.core.adapter.LanguageAdapter;
 
@@ -28,12 +29,12 @@ public class Watcher {
 
 		LanguageAdapter.registerMod(MOD_ID);
 		ModSounds.SOUND_EVENTS.register(bus);
-
 		bus.addListener(WathcerMob::entityAttributes);
 		bus.addListener(this::clientSetup);
 		bus.addListener(this::commonSetup);
 
 		ModPackets.register();
+		UpdatorChecker.init();
 
 		Mixins.addConfiguration("mixins.wt.json");
 	}
