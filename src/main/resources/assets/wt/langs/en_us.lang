@@ -17,6 +17,10 @@ advancement.wt.root.desc=Only time will show what happens next.
 advancement.wt.timeless_wasteland.title=Libera Me From Hell
 advancement.wt.timeless_wasteland.desc=Step into the timeless wasteland.(how?)
 
+item.wt.time_shard.timeless_message=§6The path of time unfolds before you...
+item.wt.time_shard.overworld_message=§eTime accelerates...
+item.wt.time_shard.invalid_dimension_message=§7This artifact does not work in this dimension.
+item.wt.time_shard=Time shard
 
-message.watcher.update_available=§c[WatcherMod] A new version is available! Update on Modrinth.
+message.watcher.warning=§5You feel an intense gaze upon you...
 

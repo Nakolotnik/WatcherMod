@@ -1,0 +1,24 @@
+{
+  "vertex": "wt:clock_shader",
+  "fragment": "wt:clock_shader",
+  "uniforms": [
+    {
+      "name": "time",
+      "type": "float",
+      "count": 1,
+      "values": [0.0]
+    },
+    {
+      "name": "center",
+      "type": "float",
+      "count": 2,
+      "values": [0.5, 0.5]
+    },
+    {
+      "name": "radius",
+      "type": "float",
+      "count": 1,
+      "values": [0.5]
+    }
+  ]
+}

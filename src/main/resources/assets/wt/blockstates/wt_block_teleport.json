@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": { "model": "wt:block/wt_block_teleport" }
+  }
+}

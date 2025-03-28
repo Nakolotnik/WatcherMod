@@ -1,4 +1,4 @@
-package org.nakolotnik.wt.world.dimension;
+package org.nakolotnik.wt.world.dimension.handlers;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.FogRenderer;

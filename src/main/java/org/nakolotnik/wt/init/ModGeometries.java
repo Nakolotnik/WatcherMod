@@ -8,4 +8,5 @@ import org.zeith.hammerlib.annotations.SimplyRegister;
 public interface ModGeometries {
     @RegistryName("watcher")
     IGeometryContainer WATCHER = IGeometryContainer.createNoSuffix();
+
 }

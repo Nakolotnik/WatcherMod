@@ -3,21 +3,19 @@ package org.nakolotnik.wt.procedures;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import org.nakolotnik.wt.client.overlay.WatcherMessageOverlayManager;
+import org.nakolotnik.wt.client.overlay.MessageOverlayManager;
 import org.nakolotnik.wt.init.ModSounds;
 import org.nakolotnik.wt.init.WatcherMessageRegistry;
-import org.nakolotnik.wt.utils.DimensionChecker;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class WatcherLookProcedure extends DimensionChecker {
+public class WatcherLookProcedure {
     private static final Map<UUID, Long> playerLookTimes = new HashMap<>();
 
     public static void execute(Entity entity, Player player) {
         if (entity == null || player == null) return;
-        if (isInTimelessWasteland(entity)) return;
 
         UUID playerId = player.getUUID();
         long currentTime = System.currentTimeMillis();
@@ -31,15 +29,16 @@ public class WatcherLookProcedure extends DimensionChecker {
 
             if (lookDuration > 3000) {
                 if (player instanceof ServerPlayer serverPlayer) {
-
-                    serverPlayer.playNotifySound(ModSounds.WHISP_AMBIENT.get(), entity.getSoundSource(), 0.2f, 1.0f);
+                    serverPlayer.playNotifySound(ModSounds.WHISP_AMBIENT, entity.getSoundSource(), 0.2f, 1.0f);
 
                     if (WatcherMessageRegistry.canSendMessage(serverPlayer)) {
-                        WatcherMessageOverlayManager.show(entity);
+                        MessageOverlayManager.show(entity);
                     }
                 }
                 playerLookTimes.remove(playerId);
             }
+
+
         } else {
             playerLookTimes.remove(playerId);
         }

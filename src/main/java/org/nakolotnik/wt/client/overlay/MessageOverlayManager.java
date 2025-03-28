@@ -16,26 +16,20 @@ import java.util.Iterator;
 import java.util.List;
 
 @Mod.EventBusSubscriber
-public class WatcherMessageOverlayManager {
+public class MessageOverlayManager {
     private static final ResourceLocation ICON = new ResourceLocation("wt", "textures/gui/watcher_icon.png");
-    private static final List<WatcherMessageOverlay> activeMessages = new ArrayList<>();
+    private static final List<MessageOverlay> activeMessages = new ArrayList<>();
 
     private static final int backgroundTransparency = 95;
-    private static final Component WATCHER_NAME = Component.literal("[Смотрящий]: ").withStyle(style -> style.withColor(0xFFFFFF));
 
     public static void show(Entity entity) {
         activeMessages.clear();
-        activeMessages.add(new WatcherMessageOverlay(WatcherMessageRegistry.getRandomMessage(), entity));
+        activeMessages.add(new MessageOverlay(WatcherMessageRegistry.getRandomMessage(), entity));
     }
 
     public static void showStaticMessage(Entity entity, String message) {
         activeMessages.clear();
-        activeMessages.add(new WatcherMessageOverlay(Component.literal(message).withStyle(style -> style.withColor(0xAAAAAA)), entity));
-    }
-
-    public static void showWatcherMessage(Entity entity, Component message) {
-        activeMessages.clear();
-        activeMessages.add(new WatcherMessageOverlay(message, entity));
+        activeMessages.add(new MessageOverlay(Component.literal(message).withStyle(style -> style.withColor(0xAAAAAA)), entity));
     }
 
 
@@ -48,9 +42,9 @@ public class WatcherMessageOverlayManager {
         int height = mc.getWindow().getGuiScaledHeight();
         int inventoryY = height - 50;
 
-        Iterator<WatcherMessageOverlay> iterator = activeMessages.iterator();
+        Iterator<MessageOverlay> iterator = activeMessages.iterator();
         while (iterator.hasNext()) {
-            WatcherMessageOverlay overlay = iterator.next();
+            MessageOverlay overlay = iterator.next();
 
             if (overlay.shouldRemove()) {
                 iterator.remove();
@@ -60,8 +54,8 @@ public class WatcherMessageOverlayManager {
             GuiGraphics guiGraphics = event.getGuiGraphics();
             int textWidth = mc.font.width(overlay.getSelectedMessage());
             int textHeight = mc.font.lineHeight;
-            int totalWidth = textWidth + 30; // Учёт иконки
-            int textX = (width - totalWidth) / 2 + 24; // Смещаем немного левее
+            int totalWidth = textWidth + 30;
+            int textX = (width - totalWidth) / 2 + 24;
             int textY = inventoryY - textHeight / 2;
 
             int iconSize = 16;

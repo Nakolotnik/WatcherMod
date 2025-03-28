@@ -67,11 +67,5 @@ public class WatcherRenderer extends BedrockEntityRenderer<WathcerMob> {
         return false;
     }
 
-//    public IGeometricModel getWatcherModel() {
-//        return watcherModel;
-//    }
-//
-//    public void setWatcherModel(IGeometricModel watcherModel) {
-//        this.watcherModel = watcherModel;
-//    }
+
 }

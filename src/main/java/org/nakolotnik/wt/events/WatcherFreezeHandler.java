@@ -19,8 +19,8 @@ import java.util.UUID;
 public class WatcherFreezeHandler {
     private static final int DISTANCE_CHECK = 10;
     private static final int MAX_FREEZE_LEVEL = 3;
-    private static final long FREEZE_INCREMENT_TICKS = 20; // Каждые 20 тиков (~1 сек) уровень заморозки увеличивается
-    private static final long REQUIRED_LOOK_TIME = 140;    // 7 секунд (20 * 7)
+    private static final long FREEZE_INCREMENT_TICKS = 20;
+    private static final long REQUIRED_LOOK_TIME = 140;
     private static final int POWDER_SNOW_FREEZING_THRESHOLD = 140;
 
     private static final Map<UUID, Long> playerFreezeStart = new HashMap<>();

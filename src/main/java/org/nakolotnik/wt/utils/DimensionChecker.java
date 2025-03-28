@@ -1,5 +1,3 @@
-
-
 package org.nakolotnik.wt.utils;
 
 import net.minecraft.resources.ResourceLocation;

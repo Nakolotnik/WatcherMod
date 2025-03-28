@@ -7,14 +7,41 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.item.ItemEntity;
+import org.nakolotnik.wt.init.ModItems;
 import org.nakolotnik.wt.init.ModSounds;
 import org.nakolotnik.wt.utils.DimensionChecker;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class WatcherIdleProcedure {
 
     private static final double SOUND_CHANCE = 1.0;
     private static final double DEFAULT_DESPAWN_RADIUS = 3.0;
     private static final double WT_DESPAWN_RADIUS = 1.0;
+
+    private static final List<DropEntry> DROP_TABLE = new ArrayList<>();
+
+    static {
+        DROP_TABLE.add(new DropEntry(ModItems.TIME_SHARD, 1.00f, 1, 5));
+    }
+
+    private static class DropEntry {
+        final Item item;
+        final float chance;
+        final int minCount;
+        final int maxCount;
+
+        DropEntry(Item item, float chance, int minCount, int maxCount) {
+            this.item = item;
+            this.chance = chance;
+            this.minCount = minCount;
+            this.maxCount = maxCount;
+        }
+    }
 
     public static void execute(Entity entity) {
         if (entity == null || !(entity.level() instanceof ServerLevel)) return;
@@ -50,8 +77,25 @@ public class WatcherIdleProcedure {
 
                 RandomSource random = player.getRandom();
                 if (random.nextDouble() < SOUND_CHANCE) {
-                    world.playSound(null, entity.blockPosition(), ModSounds.WATCHER_DESPAWN_SOUND.get(), SoundSource.HOSTILE, 1.0f, 1.0f);
+                    world.playSound(null, entity.blockPosition(), ModSounds.WATCHER_DESPAWN_SOUND, SoundSource.HOSTILE, 1.0f, 1.0f);
                 }
+
+                for (DropEntry entry : DROP_TABLE) {
+                    if (random.nextFloat() < entry.chance) {
+                        int dropCount = entry.minCount + random.nextInt(entry.maxCount - entry.minCount + 1);
+                        ItemStack itemStack = new ItemStack(entry.item, dropCount);
+                        ItemEntity itemEntity = new ItemEntity(
+                                world,
+                                entity.getX(),
+                                entity.getY(),
+                                entity.getZ(),
+                                itemStack
+                        );
+                        itemEntity.setPickUpDelay(10);
+                        world.addFreshEntity(itemEntity);
+                    }
+                }
+
                 entity.remove(Entity.RemovalReason.DISCARDED);
                 break;
             }

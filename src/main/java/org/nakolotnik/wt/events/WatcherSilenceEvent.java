@@ -9,7 +9,7 @@ import net.minecraftforge.event.CommandEvent;
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import org.nakolotnik.wt.client.overlay.WatcherMessageOverlayManager;
+import org.nakolotnik.wt.client.overlay.MessageOverlayManager;
 import org.nakolotnik.wt.entity.WathcerMob;
 
 @Mod.EventBusSubscriber
@@ -29,7 +29,7 @@ public class WatcherSilenceEvent {
         if (event.getParseResults().getContext().getSource().getEntity() instanceof ServerPlayer player) {
             if (isNearWatcher(player)) {
                 event.setCanceled(true);
-                WatcherMessageOverlayManager.showStaticMessage(player, "[Ни богов, ни господ]");
+                MessageOverlayManager.showStaticMessage(player, "[Ни богов, ни господ]");
             }
         }
     }

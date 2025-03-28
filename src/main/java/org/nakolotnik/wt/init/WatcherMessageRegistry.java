@@ -13,7 +13,6 @@ public class WatcherMessageRegistry {
     private static final long COOLDOWN_MILLIS = 10 * 60 * 1000;
 
     static {
-
         registerMessage("message.watcher.1", 1);
         registerMessage("message.watcher.2", 2);
         registerMessage("message.watcher.3", 3);
@@ -21,8 +20,6 @@ public class WatcherMessageRegistry {
         registerMessage("message.watcher.5", 6);
         registerMessage("message.watcher.6", 8);
         registerMessage("message.watcher.7", 10);
-        registerMessage("message.watcher.8", 10);
-
     }
 
     public static void registerMessage(String key, int rarityIndex) {
@@ -58,18 +55,5 @@ public class WatcherMessageRegistry {
         String selectedMessage = weightedMessages.get(random.nextInt(weightedMessages.size()));
 
         return Component.translatable(selectedMessage).withStyle(style -> style.withColor(0xAAAAAA));
-    }
-    public static Component getWatcherMessage() {
-        return Component.empty()
-                .append(Component.literal("[")
-                        .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x7F7F7F))))
-                .append(Component.translatable("entity.wt.watcher")
-                        .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x7F7F7F))))
-                .append(Component.literal("] ")
-                        .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0x7F7F7F))))
-                .append(Component.literal(": ")
-                        .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF))))
-                .append(Component.translatable("message.watcher.not_your_time")
-                        .setStyle(Style.EMPTY.withColor(TextColor.fromRgb(0xFFFFFF))));
     }
 }
