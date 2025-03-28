@@ -1,0 +1,49 @@
+# Mod Info
+mod_version=0.1.7
+build_candidate=false
+
+# Mod dependencies (jei is not a requirement, but HammerLib is)
+hl_version=20.1.48
+jei_version=15.2.0.22
+hammeranims_version=20.1.38
+
+# Persistent mod info
+mod_id=wt
+archive_name=wt
+mod_name=Watcher
+mod_description=Adds a Watcher from the Story Telling Team's story seasons
+mod_authors=Nakolotnik
+mod_license=All Rights Reserved
+mod_credits=None
+issue_tracker_url=https://github.com/dragon-forge/HammerLib/issues
+
+# Maven Info
+maven_group=org.nakolotnik.wt
+maven_url=file:///SERVER//Maven
+
+# MC Info
+mc_version=1.20.1
+mc_range=[1.20.1,1.21)
+forge_version=47.1.99
+forge_range=[47,)
+mc_user=Nakolotnik,a928d333d04440ecbb482e580df99cb5
+
+# Misc Info
+java=17
+
+# Project ID on CurseForge
+cf_project=0
+modrinth_project=
+
+# alpha, beta, release
+release_type=alpha
+
+# List of mods separated by ;
+# If a specific mod for one platform is needed, @m: or @c: prefixes are used.
+# Example for adding Hammer Lib for both Modrinth & CurseForge: 
+# @m:PlkSuVtM;@c:hammer-lib;
+# Which can be simplified to be just "hammer-lib" since the slug is the same on both platforms.
+required_mods=hammer-lib;
+optional_mods=
+incompatible_mods=
+embedded_mods=

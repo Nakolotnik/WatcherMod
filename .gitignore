@@ -1,0 +1,33 @@
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
+
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+build
+.gradle
+
+eclipse
+run
+libraries
+
+forge*changelog.txt
+
+src/test
+src/generated
+
+
+↓ Setup.bat
+
+→ Build Locally.bat
+
+↑ CurseForge.bat
+
+Readme.md
