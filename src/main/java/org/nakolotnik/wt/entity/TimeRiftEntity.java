@@ -20,6 +20,7 @@ import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
@@ -169,7 +170,6 @@ public class TimeRiftEntity extends Entity {
         if (!(player instanceof ServerPlayer serverPlayer)) return;
 
         ResourceKey<Level> destination = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("wt:timeless_wasteland"));
-
         if (serverPlayer.level().dimension() == destination) return;
 
         ServerLevel targetLevel = serverPlayer.server.getLevel(destination);
@@ -177,9 +177,19 @@ public class TimeRiftEntity extends Entity {
 
         BlockPos targetPos = findSafePositionNearCenter(targetLevel, serverPlayer.position());
 
-        serverPlayer.teleportTo(targetLevel, targetPos.getX() + 0.5, targetPos.getY(), targetPos.getZ() + 0.5,
-                serverPlayer.getYRot(), serverPlayer.getXRot());
+        serverPlayer.teleportTo(
+                targetLevel,
+                targetPos.getX() + 0.5,
+                targetPos.getY(),
+                targetPos.getZ() + 0.5,
+                serverPlayer.getYRot(),
+                serverPlayer.getXRot()
+        );
 
+        serverPlayer.setDeltaMovement(Vec3.ZERO);
+        serverPlayer.fallDistance = 0F;
+        serverPlayer.hurtMarked = true;
+        serverPlayer.resetFallDistance();
     }
 
     private BlockPos findSafePositionNearCenter(ServerLevel level, Vec3 basePos) {
@@ -188,22 +198,21 @@ public class TimeRiftEntity extends Entity {
         int centerZ = (int) basePos.z;
 
         int radius = 12;
-        int minY = Math.max(level.getMinBuildHeight(), 40);
-        int maxY = Math.min(level.getMaxBuildHeight(), 150);
 
-        for (int attempt = 0; attempt < 80; attempt++) {
+        for (int attempt = 0; attempt < 100; attempt++) {
             int dx = centerX + rand.nextInt(radius * 2 + 1) - radius;
             int dz = centerZ + rand.nextInt(radius * 2 + 1) - radius;
-            int dy = maxY - attempt / 2;
 
-            BlockPos pos = new BlockPos(dx, dy, dz);
+            BlockPos surface = level.getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, new BlockPos(dx, 0, dz));
+            BlockPos check = surface.above();
 
-            if (isSafePosition(level, pos)) {
-                return pos;
+            if (isSafePosition(level, check)) {
+                return check;
             }
         }
 
-        return new BlockPos(centerX, 80, centerZ);
+        BlockPos fallback = level.getHeightmapPos(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, new BlockPos(centerX, 0, centerZ));
+        return fallback.above();
     }
 
     private boolean isSafePosition(LevelAccessor level, BlockPos pos) {
