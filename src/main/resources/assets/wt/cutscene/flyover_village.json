@@ -1,0 +1,49 @@
+{
+  "name": "flyover_village",
+  "speed": 1.5,
+  "frames": [
+    {
+      "posX": 0.0,
+      "posY": 70.0,
+      "posZ": 0.0,
+      "yaw": 0.0,
+      "pitch": -20.0,
+      "duration": 60
+    },
+    {
+      "posX": 20.0,
+      "posY": 75.0,
+      "posZ": 10.0,
+      "yaw": 45.0,
+      "pitch": -15.0,
+      "duration": 80,
+      "interpolation": "CURVE"
+    },
+    {
+      "posX": 30.0,
+      "posY": 70.0,
+      "posZ": 25.0,
+      "yaw": 90.0,
+      "pitch": -10.0,
+      "duration": 60,
+      "interpolation": "LINEAR"
+    },
+    {
+      "posX": 15.0,
+      "posY": 65.0,
+      "posZ": 35.0,
+      "yaw": 135.0,
+      "pitch": 0.0,
+      "duration": 70
+    },
+    {
+      "posX": 0.0,
+      "posY": 70.0,
+      "posZ": 20.0,
+      "yaw": 180.0,
+      "pitch": -5.0,
+      "duration": 50,
+      "interpolation": "SMOOTH"
+    }
+  ]
+}

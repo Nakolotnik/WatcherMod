@@ -1,20 +1,22 @@
 //
-// TODO: попасть в Storytelling team
+// TODO: вернуть регистрацию команд, перенести в вариаблы для сохранения после выхода
 //
 
 package org.nakolotnik.wt;
 
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.nakolotnik.wt.capabilities.TimeDetachCapability;
 import org.nakolotnik.wt.config.ClientConfig;
-import org.nakolotnik.wt.init.ModEntityRenderers;
 import org.nakolotnik.wt.entity.WathcerMob;
+import org.nakolotnik.wt.init.ModEntityRenderers;
 import org.spongepowered.asm.mixin.Mixins;
 import org.zeith.hammerlib.core.adapter.LanguageAdapter;
 
@@ -29,10 +31,8 @@ public class Watcher {
 
 		LanguageAdapter.registerMod(MOD_ID);
 
-
 		bus.addListener(WathcerMob::entityAttributes);
 		bus.addListener(this::clientSetup);
-		bus.addListener(this::commonSetup);
 
 		ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC);
 
@@ -43,7 +43,8 @@ public class Watcher {
 		ModEntityRenderers.registerRenderers();
 	}
 
-	private void commonSetup(final FMLCommonSetupEvent event) {
-
+	@SubscribeEvent
+	public void registerCaps(RegisterCapabilitiesEvent event) {
+		event.register(TimeDetachCapability.class);
 	}
 }

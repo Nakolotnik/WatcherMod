@@ -1,0 +1,59 @@
+{
+  "name": "mow",
+  "frames": [
+    {
+      "posX": 12.772239925492718,
+      "posY": -60.0,
+      "posZ": -9.657878330128748,
+      "yaw": -277.79773,
+      "pitch": 1.5000739,
+      "duration": 60,
+      "interpolation": "SMOOTH"
+    },
+    {
+      "posX": 5.325116278827887,
+      "posY": -57.0,
+      "posZ": -7.832809697383636,
+      "yaw": -278.2477,
+      "pitch": 59.850067,
+      "duration": 60,
+      "interpolation": "SMOOTH"
+    },
+    {
+      "posX": 5.573185258848153,
+      "posY": -59.0,
+      "posZ": -7.254312971470177,
+      "yaw": -77.84801,
+      "pitch": 64.80012,
+      "duration": 60,
+      "interpolation": "SMOOTH"
+    },
+    {
+      "posX": -0.8502836938689589,
+      "posY": -61.0,
+      "posZ": -9.001350064264868,
+      "yaw": -158.84987,
+      "pitch": 1.6501101,
+      "duration": 60,
+      "interpolation": "SMOOTH"
+    },
+    {
+      "posX": 4.729818568563962,
+      "posY": -57.0,
+      "posZ": -13.382142237963677,
+      "yaw": -78.59994,
+      "pitch": 90.0,
+      "duration": 60,
+      "interpolation": "SMOOTH"
+    },
+    {
+      "posX": 12.859479823970911,
+      "posY": -60.0,
+      "posZ": -9.560355193894065,
+      "yaw": 91.35041,
+      "pitch": 11.249643,
+      "duration": 60,
+      "interpolation": "SMOOTH"
+    }
+  ]
+}

@@ -76,7 +76,6 @@ public class TimePathEvent {
                 endZone.getX(), endZone.getY(), endZone.getZ()
         );
 
-        player.sendSystemMessage(net.minecraft.network.chat.Component.literal(logMessage));
         System.out.println("[TimePath] " + logMessage);
     }
 

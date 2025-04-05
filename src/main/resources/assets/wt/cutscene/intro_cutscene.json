@@ -1,0 +1,21 @@
+{
+  "name": "intro_cutscene",
+  "frames": [
+    {
+      "posX": 0.0,
+      "posY": 65.0,
+      "posZ": 0.0,
+      "yaw": 0.0,
+      "pitch": -10.0,
+      "duration": 60
+    },
+    {
+      "posX": 10.0,
+      "posY": 70.0,
+      "posZ": 5.0,
+      "yaw": 45.0,
+      "pitch": 0.0,
+      "duration": 80
+    }
+  ]
+}

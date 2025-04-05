@@ -24,11 +24,5 @@ public class ClientEventBusSubscriber {
                 shader -> ShaderHelper.setRiftShader(shader)
         );
 
-//        event.registerShader(
-//                new ShaderInstance(event.getResourceProvider(),
-//                        new ResourceLocation(Watcher.MOD_ID, "clock_shader"),
-//                        DefaultVertexFormat.POSITION_COLOR),
-//                shader -> ShaderHelper.setRiftShader(shader)
-//        );
     }
 }

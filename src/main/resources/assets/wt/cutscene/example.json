@@ -1,0 +1,32 @@
+{
+  "name": "test",
+  "frames": [
+    {
+      "posX": 677.0,
+      "posY": 70.0,
+      "posZ": -250.0,
+      "yaw": 73.02019,
+      "pitch": 57.29976,
+      "duration": 60,
+      "interpolation": "SMOOTH"
+    },
+    {
+      "posX": 670.0,
+      "posY": 74.0,
+      "posZ": -253.0,
+      "yaw": 94.32038,
+      "pitch": 54.44982,
+      "duration": 60,
+      "interpolation": "SMOOTH"
+    },
+    {
+      "posX": 655.0,
+      "posY": 80.0,
+      "posZ": -249.0,
+      "yaw": -4.0801387,
+      "pitch": 90.0,
+      "duration": 60,
+      "interpolation": "SMOOTH"
+    }
+  ]
+}

@@ -24,3 +24,6 @@ item.wt.time_shard=Time shard
 
 message.watcher.warning=§5You feel an intense gaze upon you...
 
+item.wt.time_shard.desc=A fragment of crystallized time. Use in specific dimensions to manipulate time.
+
+message.wt.cannot_sleep=You are unbound from time and cannot sleep

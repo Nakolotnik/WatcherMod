@@ -23,3 +23,7 @@ item.wt.time_shard.invalid_dimension_message=§7Этот артефакт не �
 item.wt.time_shard=Осколок времени
 
 message.watcher.warning=§5Ты чувствуешь на себе пристальный взгляд...
+
+item.wt.time_shard.desc=Фрагмент кристаллизованного времени. Используйте в определённых измерениях для управления временем.
+
+message.wt.cannot_sleep=Вы отвязаны от времени и не можете спать
